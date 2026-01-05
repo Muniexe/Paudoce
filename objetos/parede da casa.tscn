@@ -36,4 +36,5 @@ physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_w7bc3")
 
 [node name="TileMapLayer" type="TileMapLayer"]
+tile_map_data = PackedByteArray(0, 0, 3, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0)
 tile_set = SubResource("TileSet_kcj5l")
