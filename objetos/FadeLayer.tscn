@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://ce7eup40p6oks"]
+
+[ext_resource type="Script" uid="uid://c0uw2qyqsr078" path="res://scripts/canvas_layer.gd" id="1_qlvu5"]
+
+[node name="FadeLayer" type="CanvasLayer"]
+script = ExtResource("1_qlvu5")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 319.0
+offset_bottom = 182.0
+color = Color(0, 0, 0, 1)

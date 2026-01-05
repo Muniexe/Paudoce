@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://dbm7jntex65au"]
+
+[ext_resource type="Script" uid="uid://d1w6viauf16i4" path="res://scripts/doorexit.gd" id="1_r0i1s"]
+[ext_resource type="AudioStream" uid="uid://t2hulju1wbxq" path="res://sons/door_song.mp3" id="2_jv5vg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_imnhg"]
+size = Vector2(30, 8)
+
+[node name="doorexit" type="Area2D" groups=["player"]]
+script = ExtResource("1_r0i1s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(125, 51)
+shape = SubResource("RectangleShape2D_imnhg")
+
+[node name="DoorSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_jv5vg")
+volume_db = 24.0
+bus = &"SFX"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=4 uid="uid://dsj1u8cei04kr"]
+
+[ext_resource type="PackedScene" uid="uid://bn1qq5375flo6" path="res://objetos/padre.tscn" id="1_y33p5"]
+[ext_resource type="PackedScene" uid="uid://bt16uexvf5pt6" path="res://objetos/parede da casa.tscn" id="2_bo4bt"]
+[ext_resource type="Script" uid="uid://d1w6viauf16i4" path="res://scripts/doorexit.gd" id="3_0vv65"]
+[ext_resource type="AudioStream" uid="uid://t2hulju1wbxq" path="res://sons/door_song.mp3" id="4_imnhg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_imnhg"]
+size = Vector2(30, 8)
+
+[node name="HouseInterior" type="Node2D"]
+
+[node name="parede da casa" parent="." instance=ExtResource("2_bo4bt")]
+position = Vector2(35, 79)
+tile_map_data = PackedByteArray("AAAFAP3/AQABAAEAAAAGAP3/AQABAAAAAAAEAP3/AQABAAAAAAADAP3/AQAAAAAAAAACAP3/AQABAAAAAAABAP3/AQABAAAAAAAHAP3/AQAAAAAAAAAIAP3/AQABAAAAAAAJAP3/AQABAAAAAAAKAP3/AQABAAAAAAAAAP3/AQAAAAEAAAAAAP7/AQADAAEAAAAAAP//AQADAAEAAAAAAAAAAQADAAEAAAAAAAEAAQADAAEAAAAAAAIAAQADAAEAAAAAAAMAAQAAAAMAAAABAAMAAQAAAAIAAAACAAMAAQAAAAIAAAADAAMAAQAAAAIAAAAEAAMAAQAAAAIAAAAFAAMAAQAAAAIAAAAGAAMAAQAAAAIAAAAHAAMAAQAAAAIAAAAIAAMAAQAAAAIAAAAJAAMAAQAAAAIAAAAKAAMAAQADAAMAAAAKAAIAAQABAAIAAAAKAAEAAQABAAIAAAAKAAAAAQABAAIAAAAKAP//AQABAAIAAAAKAP7/AQABAAIAAAAHAP//AQACAAAAAAAIAP//AQADAAAAAAA=")
+
+[node name="player" parent="." instance=ExtResource("1_y33p5")]
+position = Vector2(124, 58)
+
+[node name="doorexit" type="Area2D" parent="." groups=["player"]]
+script = ExtResource("3_0vv65")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="doorexit"]
+position = Vector2(125, 51)
+shape = SubResource("RectangleShape2D_imnhg")
+
+[node name="DoorSound" type="AudioStreamPlayer2D" parent="doorexit"]
+stream = ExtResource("4_imnhg")
+volume_db = 24.0
+
+[connection signal="body_entered" from="doorexit" to="doorexit" method="_on_body_entered"]
+[connection signal="body_exited" from="doorexit" to="doorexit" method="_on_body_exited"]

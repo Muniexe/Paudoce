@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=3 uid="uid://bt16uexvf5pt6"]
+
+[ext_resource type="Texture2D" uid="uid://b2wqrdki0dq46" path="res://tiles/parede da casa.png" id="1_p2wdv"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w7bc3"]
+texture = ExtResource("1_p2wdv")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, -2.9676695, 8, -3.1475277, 8, -8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -3.507245, -8, -3.507245)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-3.3273869, -2.2482338, -3.6871042, 1.8885164, 8, 1.8885164, 8, -1.7086582)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -1.1690817, -8, 1.8885164, 4.22668, 0.9892235, 3.6871042, -0.9892225)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, -4.0468216, 8, -4.406539, 8, -8)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, -4.586397, 8, -4.22668, 8, -8)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -5.485691, 0.44964695, -8, 8)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, -0.9892235, 5.8454094, 8, 8)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -8, 6.0252676, 0.62950516, 8, 8)
+3:2/0 = 0
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 8, -6.2051263, 1.7086582, -6.0252676, -5.845409, 4.586398, -6.0252676, 6.384984, -8)
+0:3/0 = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 8, 8, 8, 8, 6.384985, -5.8454084, 6.384985, -6.2051263, -6.2051263)
+2:3/0 = 0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, 5.8454084, -0.62950516, 6.205127, -5.845409, -6.0252676, -6.2051263)
+3:3/0 = 0
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -8, 6.0252676, -5.6655498, 6.205127, 6.384985, -5.66555, 6.0252666, -8, 8, 8, 8)
+
+[sub_resource type="TileSet" id="TileSet_kcj5l"]
+physics_layer_0/collision_layer = 1
+sources/1 = SubResource("TileSetAtlasSource_w7bc3")
+
+[node name="TileMapLayer" type="TileMapLayer"]
+tile_set = SubResource("TileSet_kcj5l")

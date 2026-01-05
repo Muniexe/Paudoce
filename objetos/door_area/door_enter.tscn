@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://d1rd7weu1kguf"]
+
+[ext_resource type="Script" uid="uid://bvbvjmnm2jtn4" path="res://scripts/interact_area.gd" id="1_xwaqa"]
+[ext_resource type="AudioStream" uid="uid://t2hulju1wbxq" path="res://sons/door_song.mp3" id="2_h86uc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bjqiv"]
+size = Vector2(32, 8)
+
+[node name="DoorEnter" type="Area2D" groups=["player"]]
+collision_layer = 2
+script = ExtResource("1_xwaqa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(263, 84)
+shape = SubResource("RectangleShape2D_bjqiv")
+
+[node name="DoorSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_h86uc")
+volume_db = 24.0
+bus = &"SFX"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
