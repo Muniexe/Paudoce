@@ -18,20 +18,32 @@ texture = ExtResource("1_vx550")
 position = Vector2(-74, 42.5)
 shape = SubResource("RectangleShape2D_yytlh")
 
-[node name="madeira gay" type="Sprite2D" parent="."]
-position = Vector2(-76, 58)
-texture = ExtResource("2_r6xuw")
-
-[node name="Madeira" type="Sprite2D" parent="."]
-position = Vector2(-68, 58)
-texture = ExtResource("2_r6xuw")
-
 [node name="WoodPile" type="Node2D" parent="."]
-visible = false
 position = Vector2(0, 5)
 
 [node name="Madeira" type="Sprite2D" parent="WoodPile"]
-position = Vector2(-74, 49)
+visible = false
+position = Vector2(-82, 52)
+texture = ExtResource("2_r6xuw")
+
+[node name="Madeira2" type="Sprite2D" parent="WoodPile"]
+visible = false
+position = Vector2(-74, 52)
+texture = ExtResource("2_r6xuw")
+
+[node name="Madeira3" type="Sprite2D" parent="WoodPile"]
+visible = false
+position = Vector2(-66, 53)
+texture = ExtResource("2_r6xuw")
+
+[node name="Madeira4" type="Sprite2D" parent="WoodPile"]
+visible = false
+position = Vector2(-77, 45)
+texture = ExtResource("2_r6xuw")
+
+[node name="Madeira5" type="Sprite2D" parent="WoodPile"]
+visible = false
+position = Vector2(-69, 45)
 texture = ExtResource("2_r6xuw")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
