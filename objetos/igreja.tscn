@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://cvk6o00i8r45b"]
+
+[ext_resource type="Script" uid="uid://cllk7eyjcmta7" path="res://igreja.gd" id="1_r6xuw"]
+[ext_resource type="Texture2D" uid="uid://csawje6hbum6y" path="res://tiles/igreja.png" id="1_vx550"]
+[ext_resource type="Texture2D" uid="uid://b2lpoihdl7ovt" path="res://sprites/objetos/madeira/madeira.png" id="2_r6xuw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yytlh"]
+size = Vector2(20, 43)
+
+[node name="igreja" type="Area2D"]
+script = ExtResource("1_r6xuw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("1_vx550")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-74, 42.5)
+shape = SubResource("RectangleShape2D_yytlh")
+
+[node name="madeira gay" type="Sprite2D" parent="."]
+position = Vector2(-76, 58)
+texture = ExtResource("2_r6xuw")
+
+[node name="Madeira" type="Sprite2D" parent="."]
+position = Vector2(-68, 58)
+texture = ExtResource("2_r6xuw")
+
+[node name="WoodPile" type="Node2D" parent="."]
+visible = false
+position = Vector2(0, 5)
+
+[node name="Madeira" type="Sprite2D" parent="WoodPile"]
+position = Vector2(-74, 49)
+texture = ExtResource("2_r6xuw")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
