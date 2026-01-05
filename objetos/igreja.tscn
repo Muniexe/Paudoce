@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cvk6o00i8r45b"]
 
-[ext_resource type="Script" uid="uid://cllk7eyjcmta7" path="res://igreja.gd" id="1_r6xuw"]
+[ext_resource type="Script" uid="uid://cllk7eyjcmta7" path="res://scripts/igreja.gd" id="1_r6xuw"]
 [ext_resource type="Texture2D" uid="uid://csawje6hbum6y" path="res://tiles/igreja.png" id="1_vx550"]
 [ext_resource type="Texture2D" uid="uid://b2lpoihdl7ovt" path="res://sprites/objetos/madeira/madeira.png" id="2_r6xuw"]
 
