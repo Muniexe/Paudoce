@@ -5,7 +5,7 @@
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_vkp2k")
 
-[node name="Label" type="Label" parent="."]
+[node name="Labelwood" type="Label" parent="."]
 offset_right = 114.0
 offset_bottom = 23.0
 text = "Madeiras: 0 / 5"
