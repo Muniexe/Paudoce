@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://cs4cuvutl42qc"]
+
+[ext_resource type="Script" uid="uid://docxuvg6omwhp" path="res://scripts/hud.gd" id="1_vkp2k"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_vkp2k")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 114.0
+offset_bottom = 23.0
+text = "Madeiras: 0 / 5"
+vertical_alignment = 1
