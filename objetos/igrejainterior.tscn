@@ -1,0 +1,61 @@
+[gd_scene load_steps=8 format=3 uid="uid://bebl7y4jhj3gh"]
+
+[ext_resource type="Texture2D" uid="uid://m1v8qysmid36" path="res://tiles/interior da igreja.png" id="1_dxvb2"]
+[ext_resource type="Texture2D" uid="uid://15mslomb0314" path="res://tiles/velas.png" id="2_r71vr"]
+[ext_resource type="Texture2D" uid="uid://b2wqrdki0dq46" path="res://tiles/parede da casa.png" id="3_ks1wc"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hjtu5"]
+texture = ExtResource("1_dxvb2")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, -3.3273869, 8, -3.6871042, 8, -8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, -2.9676695, 8, -3.1475277, 8, -8)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, -3.507245, 8, -2.9676695, 8, -8)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, -3.8669624, 8, -3.8669624, 8, -8)
+0:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+1:1/0 = 0
+3:2/0 = 0
+3:3/0 = 0
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-3.6871042, -6.0252676, -10.162018, 11.780746, 8, 8, 3.507245, -5.845409)
+0:2/0 = 0
+1:2/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h2p6f"]
+texture = ExtResource("2_r71vr")
+0:0/animation_columns = 3
+0:0/animation_frame_0/duration = 1.0
+0:0/animation_frame_1/duration = 1.0
+0:0/animation_frame_2/duration = 1.0
+0:0/0 = 0
+0:1/animation_columns = 3
+0:1/animation_frame_0/duration = 1.0
+0:1/animation_frame_1/duration = 1.0
+0:1/animation_frame_2/duration = 1.0
+0:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wmyni"]
+texture = ExtResource("3_ks1wc")
+1:1/0 = 0
+0:3/0 = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -6.2051263, -5.845409, -6.2051263, 5.485691, 6.384984, 6.0252666, 8, 8, -8, 8)
+3:3/0 = 0
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, -8, 6.0252666, 5.8454084, 6.205126, 6.384984, -8, 8, -8, 8, 8)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 8, -6.0252676, 0.62950516)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -8, 6.0252676, -0.44964695, 8, 8)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, 0.08992958, 5.66555, 8, 8)
+
+[sub_resource type="TileSet" id="TileSet_riywe"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_hjtu5")
+sources/1 = SubResource("TileSetAtlasSource_h2p6f")
+sources/2 = SubResource("TileSetAtlasSource_wmyni")
+
+[node name="TileMapLayer" type="TileMapLayer"]
+tile_set = SubResource("TileSet_riywe")
