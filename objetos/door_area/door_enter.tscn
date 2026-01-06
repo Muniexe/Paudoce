@@ -11,13 +11,11 @@ collision_layer = 2
 script = ExtResource("1_xwaqa")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(263, 84)
 shape = SubResource("RectangleShape2D_bjqiv")
 
 [node name="DoorSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_h86uc")
 volume_db = 24.0
-bus = &"SFX"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

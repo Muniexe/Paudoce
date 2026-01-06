@@ -1,14 +1,23 @@
-[gd_scene load_steps=5 format=3 uid="uid://cvk6o00i8r45b"]
+[gd_scene load_steps=6 format=3 uid="uid://cvk6o00i8r45b"]
 
 [ext_resource type="Script" uid="uid://cllk7eyjcmta7" path="res://scripts/igreja.gd" id="1_r6xuw"]
 [ext_resource type="Texture2D" uid="uid://csawje6hbum6y" path="res://tiles/igreja.png" id="1_vx550"]
 [ext_resource type="Texture2D" uid="uid://b2lpoihdl7ovt" path="res://sprites/objetos/madeira/madeira.png" id="2_r6xuw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r6xuw"]
+size = Vector2(123, 48)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yytlh"]
 size = Vector2(20, 43)
 
 [node name="igreja" type="Area2D"]
 script = ExtResource("1_r6xuw")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-0.5, 19)
+shape = SubResource("RectangleShape2D_r6xuw")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(2, 2)
