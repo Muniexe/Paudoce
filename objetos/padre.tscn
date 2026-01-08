@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bn1qq5375flo6"]
+[gd_scene load_steps=13 format=3 uid="uid://bn1qq5375flo6"]
 
 [ext_resource type="Texture2D" uid="uid://d4j3w3wre728i" path="res://sprites/caracthers/padre/idle/idle_padre1.png" id="1_f2gx1"]
 [ext_resource type="Script" uid="uid://b08mbl2lhmbeb" path="res://scripts/padre.gd" id="1_tuwl3"]
@@ -6,6 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://c2xqkdsy6vipc" path="res://sprites/caracthers/padre/idle/idle_padre3.png" id="3_cbrai"]
 [ext_resource type="Script" uid="uid://dtnb2uqcmjiyf" path="res://scripts/camera_2d.gd" id="5_cbrai"]
 [ext_resource type="Texture2D" uid="uid://dnmkqml37ucmq" path="res://sprites/botão/botão acção.png" id="6_flc7u"]
+[ext_resource type="Script" uid="uid://blwfn0e15ytp6" path="res://scripts/weapon.gd" id="7_a0kar"]
+[ext_resource type="Texture2D" uid="uid://i7vhro2dy2uf" path="res://sprites/objetos/gun/gun.png" id="7_pgdeo"]
+[ext_resource type="PackedScene" uid="uid://b1lgpistv3l7a" path="res://objetos/gun/bullet.tscn" id="8_yqx2p"]
+[ext_resource type="AudioStream" uid="uid://dsu2y8dte7geg" path="res://sons/shotgun-mossberg590-ra_the_sun_god-451502290.mp3" id="10_saqid"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_flc7u"]
 animations = [{
@@ -52,3 +56,19 @@ shape = SubResource("RectangleShape2D_pgdeo")
 [node name="Camera2D" type="Camera2D" parent="."]
 position_smoothing_enabled = true
 script = ExtResource("5_cbrai")
+
+[node name="Weapon" type="Node2D" parent="." groups=["camera"]]
+position = Vector2(0, 3)
+script = ExtResource("7_a0kar")
+bullet_scene = ExtResource("8_yqx2p")
+
+[node name="Sprite2D" type="Sprite2D" parent="Weapon"]
+texture_filter = 1
+position = Vector2(0, 4)
+texture = ExtResource("7_pgdeo")
+
+[node name="Marker2D" type="Marker2D" parent="Weapon"]
+position = Vector2(16, 3)
+
+[node name="ShotSound" type="AudioStreamPlayer2D" parent="Weapon"]
+stream = ExtResource("10_saqid")
