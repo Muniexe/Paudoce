@@ -13,6 +13,7 @@ extends Node2D
 @onready var shot_sound: AudioStreamPlayer2D = $ShotSound
 
 
+
 var can_shoot := true
 var original_position: Vector2
 
@@ -27,7 +28,9 @@ func _process(_delta):
 		shoot()
 
 func shoot():
-	var cam = get_tree().get_first_node_in_group("camera")
+	var cam: Camera2D =$"../Camera2D"
+	if cam:
+		cam.shake()
 
 	can_shoot = false
 	shot_sound.play()
@@ -49,12 +52,6 @@ func shoot():
 	await get_tree().create_timer(fire_rate).timeout
 	can_shoot = true
 	
-	if cam:
-		cam.shake()
-
-		
-
-
 # ===============================
 # 🔁 RECUO DA ARMA
 # ===============================

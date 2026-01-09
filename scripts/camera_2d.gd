@@ -25,3 +25,4 @@ func _process(delta):
 
 func shake():
 	shake_time = shake_duration
+	
